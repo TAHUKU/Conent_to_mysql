@@ -7,9 +7,11 @@ if (isset($_POST['update'])) {
     $email        = $_POST['email'];
     $no_hp        = $_POST['telepon'];
     $alamat       = $_POST['alamat'];
+    $Gender       = $_POST['Gender'];
+
 
     // Query SQL untuk mengubah data berdasarkan ID user
-    $query = "UPDATE tes SET nama_lengkap='$nama_lengkap', email='$email', no_hp='$no_hp', alamat='$alamat' WHERE user='$id'";
+    $query = "UPDATE tes SET nama_lengkap='$nama_lengkap', email='$email', no_hp='$no_hp', alamat='$alamat' , Gender='$Gender' WHERE user='$id'";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
