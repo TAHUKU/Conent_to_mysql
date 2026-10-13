@@ -1,0 +1,21 @@
+<?php
+include "teskoneksi.php";
+
+if (isset($_POST['update'])) {
+    $id           = $_POST['user'];
+    $nama_lengkap = $_POST['nama'];
+    $email        = $_POST['email'];
+    $no_hp        = $_POST['telepon'];
+    $alamat       = $_POST['alamat'];
+
+    // Query SQL untuk mengubah data berdasarkan ID user
+    $query = "UPDATE tes SET nama_lengkap='$nama_lengkap', email='$email', no_hp='$no_hp', alamat='$alamat' WHERE user='$id'";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        echo "<script>alert('Data berhasil diperbarui!'); window.location='lihat_data.php';</script>";
+    } else {
+        echo "Gagal memperbarui data: " . mysqli_error($koneksi);
+    }
+}
+?>

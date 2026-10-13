@@ -7,8 +7,15 @@ if (isset($_POST['submit'])) {
     $email        = $_POST['email'];
     $no_hp        = $_POST['telepon'];
     $alamat       = $_POST['alamat'];
+    $Gender       = $_POST['Gender'];
 
-    $query = "INSERT INTO tes (nama_lengkap, email, no_hp, alamat) VALUES ('$nama_lengkap', '$email', '$no_hp', '$alamat')";
+    if (!is_numeric($no_hp)) {
+    // Jika bukan angka, gagalkan penyimpanan dan beri peringatan
+    echo "<script>alert('Nomor telepon harus diisi dengan angka!'); window.history.back();</script>";
+    exit;
+}
+
+    $query = "INSERT INTO tes (nama_lengkap, email, no_hp, alamat, Gender) VALUES ('$nama_lengkap', '$email', '$no_hp', '$alamat', '$Gender')";
 
     $result = mysqli_query($koneksi, $query);
 
