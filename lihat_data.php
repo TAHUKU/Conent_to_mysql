@@ -1,66 +1,77 @@
 <?php
-// Panggil koneksi database
+session_start();
 include "teskoneksi.php";
+$nama_pengguna = $_SESSION['username'];
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Data Pendaftar</title>
+    <title>Daftar Data Pengguna</title>
+    <!-- Memanggil CSS Eksternal -->
     <link rel="stylesheet" href="css/look.css">
-    <style>
-        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
 </head>
 <body>
-    <h2>Daftar Data yang Sudah Masuk</h2>
-    <a href="form_pendaftaran.php">+ Tambah Pendaftaran Baru</a>
+
+    <h2>Daftar Data Pendaftaran</h2>
     
-    <table>
+    <!-- Bagian Info Login & Logout -->
+    <div class="user-info">
+    <h2 id="teks-sapaan" data-nama="<?php echo htmlspecialchars($nama_pengguna); ?>"></h2>
+        <a href="logout.php" class="btn-logout">Logout</a>
+    </div>
+
+    <!-- Tabel Data dengan class "data-table" -->
+    <table class="data-table">
         <tr>
             <th>No</th>
             <th>Nama Lengkap</th>
             <th>Email</th>
-            <th>Telepon</th>
+            <th>No HP</th>
             <th>Alamat</th>
             <th>Gender</th>
-            <th>Aksi</th>
-
+            
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
+                <th>Aksi</th>
+            <?php } ?>
         </tr>
+
         <?php
         $query = "SELECT * FROM tes";
-
         $result = mysqli_query($koneksi, $query);
         $no = 1;
+
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $no++ . "</td>";
             echo "<td>" . $row['nama_lengkap'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
-            echo "<td>" . $row['no_hp'] . "</td>"; 
+            echo "<td>" . $row['no_hp'] . "</td>";
             echo "<td>" . $row['alamat'] . "</td>";
             echo "<td>" . $row['Gender'] . "</td>";
-             
-            
-            echo "<td>";
-            echo "<a href='edit.php?id=" . $row['user'] . "'>Edit</a> | ";
-            echo "<a href='hapus.php?id=" . $row['user'] . "' onclick='return confirm(\"Yakin ingin menghapus data ini?\")'>Hapus</a>";
-            echo "</td>";
-            
+
+            // Kolom aksi khusus admin atau tampilan bersih untuk user biasa
+            if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+                echo "<td>
+                        <a href='edit.php?id=" . $row['user'] . "' class='btn-edit'>Edit</a> 
+                        <a href='hapus.php?id=" . $row['user'] . "' class='btn-hapus' onclick='return confirm(\"Yakin ingin menghapus data ini?\")'>Hapus</a>
+                      </td>";
+            }
+
             echo "</tr>";
         }
         ?>
-            <?php if (mysqli_num_rows($result) == 0): ?>
-    <tr>
-        <td colspan="7" style="text-align:center; padding:20px; color:#999;">
-            Belum ada data pendaftar.
-        </td>
-    </tr>
-<?php endif; ?>
     </table>
+
+    <!-- <h2 id="teks-sapaan" data-nama="<?php echo htmlspecialchars($nama_pengguna); ?>"></h2> -->
+
+    <!-- Panggil file JavaScript di bagian bawah sebelum tag penutup body -->
+    <script src="js/time.js"></script>
 
 </body>
 </html>

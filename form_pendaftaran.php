@@ -21,7 +21,7 @@
         <input type="text" name="alamat" required><br><br>
 
              <label>Gender:</label><br>
-            <select name="gender" required>
+            <select name="Gender" required>
                 <option value="">-- Pilih --</option>
                 <option value="Laki-laki">Laki-laki</option>
                 <option value="Perempuan">Perempuan</option>
