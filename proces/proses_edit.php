@@ -1,5 +1,5 @@
 <?php
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 
 if (isset($_POST['update'])) {
     $id           = $_POST['user'];

@@ -1,5 +1,5 @@
 <?php
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 session_start();
 
 if (isset($_POST['login'])) {
@@ -23,11 +23,11 @@ if (isset($_POST['login'])) {
             // 3. CABANG / PENGKONDISIAN BERDASARKAN ROLE
             if ($row['role'] == 'admin') {
                 // Jika yang login adalah admin, arahkan ke lihat data
-                header("Location: lihat_data.php");
+                header("Location: ../lihat_data.php");
                 exit;
             } else {
                 // Jika yang login adalah user biasa, arahkan ke halaman form
-                header("Location: form_pendaftaran.php"); // Ganti 'form.php' dengan nama file form Anda
+                header("Location: ../form_pendaftaran.php"); // Ganti 'form.php' dengan nama file form Anda
                 exit;
             }
 

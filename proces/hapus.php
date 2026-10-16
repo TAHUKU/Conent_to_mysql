@@ -1,6 +1,6 @@
 <?php
 // 1. Hubungkan ke database
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 
 // 2. Tangkap ID yang dikirim lewat URL (menggunakan GET)
 $id = $_GET['id'];

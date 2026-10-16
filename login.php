@@ -8,7 +8,7 @@
 
     <div class="form-container">
         <h2>Silakan Login</h2>
-        <form action="proses_login.php" method="POST">
+        <form action="proces/proses_login.php" method="POST">
             <label>Username</label>
             <input type="text" name="username" required>
 

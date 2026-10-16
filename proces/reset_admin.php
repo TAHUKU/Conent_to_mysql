@@ -1,5 +1,5 @@
 <?php
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 
 // Password baru yang ingin Anda gunakan
 $password_asli = "tess123";

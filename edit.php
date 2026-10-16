@@ -1,5 +1,5 @@
 <?php
-include "teskoneksi.php";
+include "config/teskoneksi.php";
 
 // Tangkap ID yang dikirim dari URL
 $id = $_GET['id'];

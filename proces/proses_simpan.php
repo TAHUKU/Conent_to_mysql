@@ -1,6 +1,6 @@
 <?php
 
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 
 if (isset($_POST['submit'])) {
     $nama_lengkap = $_POST['nama'];

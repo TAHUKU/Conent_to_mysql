@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Form Pendaftaran Siswa/Peserta</h2>
-    <form action="proses_simpan.php" method="POST">
+    <form action="proces/proses_simpan.php" method="POST">
         <label>Nama Lengkap:</label><br>
         <input type="text" name="nama" required><br><br>
 

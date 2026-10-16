@@ -1,5 +1,5 @@
 <?php
-include "teskoneksi.php";
+include "../config/teskoneksi.php";
 
 if (isset($_POST['daftar'])) {
     $username = $_POST['username'];
@@ -13,7 +13,7 @@ if (isset($_POST['daftar'])) {
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
-        echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location='login.php';</script>";
+        echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location='../login.php';</script>";
     } else {
         echo "Gagal mendaftar: " . mysqli_error($koneksi);
     }

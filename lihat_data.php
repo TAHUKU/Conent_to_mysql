@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "teskoneksi.php";
+include "config/teskoneksi.php";
 $nama_pengguna = $_SESSION['username'];
 
 if (!isset($_SESSION['username'])) {
