@@ -57,6 +57,7 @@ $sudah_daftar = mysqli_num_rows($cek_pendaftar) > 0;
                     Data diri Anda telah tersimpan di sistem. Terima kasih telah mendaftar!
                 </p>
                <a href="../admin/lihat_data.php" class="btn-lihat">Lihat Data Pendaftaran Saya</a>
+               <a href="edit_user.php" class="btn-lihat" style="background-color: #3498db; margin-left: 10px;">Edit Data Diri Saya</a>
             <?php } else { ?>
                 <!-- Teks jika belum mendaftar -->
                 <p class="card-number" style="font-size: 1.3rem; color: #e74c3c;">Belum Mendaftar</p>
