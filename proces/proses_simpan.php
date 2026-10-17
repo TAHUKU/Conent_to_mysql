@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
-        echo "<script>alert('Pendaftaran berhasil!'); window.location='lihat_data.php';</script>";
+        echo "<script>alert('Pendaftaran berhasil!'); window.location='../admin/lihat_data.php';</script>";
     } else {
         echo "Gagal mendaftar: " . mysqli_error($koneksi);
     }

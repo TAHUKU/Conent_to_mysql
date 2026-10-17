@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 include "../config/teskoneksi.php";
 
 if (isset($_POST['update'])) {
@@ -15,7 +18,7 @@ if (isset($_POST['update'])) {
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil diperbarui!'); window.location='lihat_data.php';</script>";
+        echo "<script>alert('Data berhasil diperbarui!'); window.location='../admin/lihat_data.php';</script>";
     } else {
         echo "Gagal memperbarui data: " . mysqli_error($koneksi);
     }

@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
             // 3. CABANG / PENGKONDISIAN BERDASARKAN ROLE
             if ($row['role'] == 'admin') {
                 // Jika yang login adalah admin, arahkan ke lihat data
-                header("Location: ../lihat_data.php");
+                header("Location: ../admin/dashboard_admin.php");
                 exit;
             } else {
                 // Jika yang login adalah user biasa, arahkan ke halaman form

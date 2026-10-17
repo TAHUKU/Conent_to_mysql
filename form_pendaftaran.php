@@ -30,6 +30,6 @@
         <button type="submit" name="submit">Daftar Sekarang</button>
     </form>
     <br>
-    <a href="lihat_data.php">Lihat Data Pendaftar</a>
+    <a href="admin/lihat_data.php">Lihat Data Pendaftar</a>
 </body>
 </html>

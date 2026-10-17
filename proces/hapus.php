@@ -11,13 +11,19 @@ $query = "DELETE FROM tes WHERE user = '$id'";
 // 4. Jalankan query penghapusan
 $result = mysqli_query($koneksi, $query);
 
-// 5. Cek apakah berhasil, lalu kembalikan ke halaman lihat data
+// 5. Cek apakah berhasil, lalu tampilkan alert dan kembalikan ke lihat data
 if ($result) {
-    // Jika berhasil dihapus, lempar balik ke lihat_data.php
-    header("Location: lihat_data.php");
+    // Tampilkan pop-up notifikasi berhasil, lalu redirect ke halaman lihat_data.php
+    echo "<script>
+            alert('Data berhasil dihapus!');
+            window.location='../admin/lihat_data.php';
+          </script>";
     exit;
 } else {
     // Jika gagal
-    echo "Gagal menghapus data: " . mysqli_error($koneksi);
+    echo "<script>
+            alert('Gagal menghapus data: " . mysqli_error($koneksi) . "');
+            window.location='../admin/lihat_data.php';
+          </script>";
 }
 ?>

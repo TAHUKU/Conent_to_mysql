@@ -23,7 +23,7 @@ if (!$row) {
 </head>
 <body>
     <h2>Edit Data Pendaftar</h2>
-    <form action="proses_edit.php" method="POST">
+    <form action="proces/proses_edit.php" method="POST">
         <!-- Kirim ID secara tersembunyi (hidden) agar sistem tahu data mana yang diubah -->
         <input type="hidden" name="user" value="<?php echo $row['user']; ?>">
 
@@ -47,6 +47,6 @@ if (!$row) {
         <button type="submit" name="update">Simpan Perubahan</button>
     </form>
     <br>
-    <a href="lihat_data.php">Kembali ke Daftar Data</a>
+    <a href="../admin/lihat_data.php">Kembali ke Daftar Data</a>
 </body>
 </html>

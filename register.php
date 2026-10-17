@@ -8,7 +8,7 @@
 
     <div class="form-container">
         <h2>Form Pendaftaran Akun</h2>
-        <form action="proses_register.php" method="POST">
+        <form action="proces/proses_register.php" method="POST">
             <label>Username</label>
             <input type="text" name="username" required>
 
