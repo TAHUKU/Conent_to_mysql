@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
                 exit;
             } else {
                 // Jika yang login adalah user biasa, arahkan ke halaman form
-                header("Location: ../form_pendaftaran.php"); // Ganti 'form.php' dengan nama file form Anda
+                header("Location: ../user/dashboard.php"); // Ganti 'form.php' dengan nama file form Anda
                 exit;
             }
 

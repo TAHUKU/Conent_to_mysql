@@ -228,3 +228,22 @@ nav a:hover {
     margin-bottom: 20px;
     font-weight: 600;
 }
+
+/* Styling khusus untuk tombol / link lihat data di dashboard */
+.btn-lihat {
+    display: inline-block;
+    background-color: #2ecc71; /* Warna hijau segar */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-lihat:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}

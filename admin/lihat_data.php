@@ -32,7 +32,7 @@ if (!isset($_SESSION['username'])) {
  <!-- Navigasi Admin yang sudah diberi gaya -->
  <nav>
     <a href="lihat_data.php">Data Pendaftar</a>
-    <!-- <a href="lihat_user.php">Daftar Akun User</a> -->
+    <a href="../user/dashboard.php">Back to dashboard</a>
     <!-- <a href="../logout.php">Logout</a> -->
 </nav>
 
