@@ -41,7 +41,7 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
     </div>
 
     <nav>
-        <a href="dashboard.php">Dashboard</a>
+        <a href="dashboard_admin.php">Dashboard</a>
         <a href="lihat_data.php">Data Pendaftar</a>
         <a href="lihat_user.php">Daftar Akun User</a>
         <a href="../logout.php">Logout</a>
