@@ -58,6 +58,7 @@ $sudah_daftar = mysqli_num_rows($cek_pendaftar) > 0;
                 </p>
                <a href="../admin/lihat_data.php" class="btn-lihat">Lihat Data Pendaftaran Saya</a>
                <a href="edit_user.php" class="btn-lihat" style="background-color: #3498db; margin-left: 10px;">Edit Data Diri Saya</a>
+               <a href="../proces/proses_hapus_user.php" class="btn-lihat" style="background-color: #e74c3c; margin-left: 10px;" onclick="return confirm('Apakah Anda yakin ingin menghapus data pendaftaran ini?');">Hapus Pendaftaran</a>
             <?php } else { ?>
                 <!-- Teks jika belum mendaftar -->
                 <p class="card-number" style="font-size: 1.3rem; color: #e74c3c;">Belum Mendaftar</p>
