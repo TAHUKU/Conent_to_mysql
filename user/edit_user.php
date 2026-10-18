@@ -30,6 +30,7 @@ if (!$data) {
     <meta charset="UTF-8">
     <title>Edit Data Diri</title>
     <link rel="stylesheet" href="../css/data.css">
+    <link rel="shortcut icon" href="../favicon/edit-info.png" type="image/x-icon">
 </head>
 <body>
     <div class="card" style="max-width: 500px; margin: 50px auto; padding: 20px;">

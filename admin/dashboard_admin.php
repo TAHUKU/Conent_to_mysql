@@ -28,6 +28,7 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
     <meta charset="UTF-8">
     <title>Dashboard Admin</title>
     <link rel="stylesheet" href="../css/data.css">
+    <link rel="shortcut icon" href="../favicon/dashboard_admin.png" type="image/x-icon">
     <!-- Load Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>

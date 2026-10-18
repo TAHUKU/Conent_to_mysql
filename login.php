@@ -3,6 +3,7 @@
 <head>
     <title>Halaman Login</title>
     <link rel="stylesheet" href="css/log_reg.css">
+    <link rel="shortcut icon" href="favicon/login.png" type="image/x-icon">
 </head>
 <body>
 

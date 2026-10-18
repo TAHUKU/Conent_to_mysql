@@ -18,6 +18,7 @@ $nama_pengguna = $_SESSION['username'];
     <title>Daftar Akun User</title>
     <!-- Memanggil CSS eksternal -->
     <link rel="stylesheet" href="../css/data.css">
+    <link rel="shortcut icon" href="../favicon/lihat_user.png" type="image/x-icon">
 </head>
 <body>
 

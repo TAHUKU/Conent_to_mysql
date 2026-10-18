@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Form Pendaftaran</title>
     <link rel="stylesheet" href="css/form.css">
+    <link rel="shortcut icon" href="../favicon/form_pendaftaran.png" type="image/x-icon">
 </head>
 <body>
     <h2>Form Pendaftaran Siswa/Peserta</h2>

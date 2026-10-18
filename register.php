@@ -3,6 +3,7 @@
 <head>
     <title>Halaman Pendaftaran Akun</title>
     <link rel="stylesheet" href="css/log_reg.css">
+    <link rel="shortcut icon" href="favicon/add-user.png" type="image/x-icon">
 </head>
 <body>
 

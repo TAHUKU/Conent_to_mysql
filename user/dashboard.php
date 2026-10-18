@@ -22,6 +22,7 @@ $sudah_daftar = mysqli_num_rows($cek_pendaftar) > 0;
     <title>Dashboard User</title>
     <!-- Memanggil CSS eksternal -->
     <link rel="stylesheet" href="../css/data.css">
+    <link rel="shortcut icon" href="../favicon/user" type="image/x-icon">
 </head>
 <body>
 
