@@ -60,7 +60,7 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
         <div class="card">
             <h3>Total Akun User</h3>
             <p class="card-number"><?php echo $total_users; ?></p>
-            <a href="lihat_user.php" class="card-link">Lihat Detail &rarr;</a>
+            <a href="lihat_akun_user.php" class="card-link">Lihat Detail &rarr;</a>
         </div>
 
         <div class="card card-info">
