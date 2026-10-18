@@ -74,10 +74,13 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
         </div>
     </div>
 
-    <!-- Container untuk Bar Chart -->
+<!-- Container untuk Bar Chart -->
     <div class="chart-container">
         <h3>Grafik Statistik Pendaftar Berdasarkan Gender</h3>
-        <canvas id="genderChart"></canvas>
+        <canvas id="genderChart" 
+                data-laki="<?php echo $total_laki; ?>" 
+                data-perempuan="<?php echo $total_perempuan; ?>">
+        </canvas>
     </div>
 
     <script src="../js/time.js"></script>
