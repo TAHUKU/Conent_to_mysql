@@ -8,14 +8,14 @@ body {
 }
 
 .admin-container {
-    width: 100%;            /* Mengambil seluruh lebar layar */
-    max-width: 100%;        /* Menghapus batas maksimal lebar */
-    margin: 0;              /* Menghilangkan jarak atas-bawah dan tengah */
-    padding: 30px;          /* Memberikan jarak dalam agar konten tidak menempel pinggir */
+    width: 100%;            
+    max-width: 100%;        
+    margin: 0;              
+    padding: 30px;          
     background: #ffffff;
-    border-radius: 0;       /* Menghilangkan sudut melengkung agar pas dengan layar */
-    box-shadow: none;       /* Menghilangkan bayangan kotak */
-    box-sizing: border-box; /* Memastikan padding tidak membuat elemen melebihi layar */
+    border-radius: 0;       
+    box-shadow: none;       
+    box-sizing: border-box; 
 }
 
 h2 {
