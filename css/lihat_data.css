@@ -1,0 +1,137 @@
+/* Styling Utama Halaman Admin */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    width: 100%;            /* Mengambil seluruh lebar layar */
+    max-width: 100%;        /* Menghapus batas maksimal lebar */
+    margin: 0;              /* Menghilangkan jarak atas-bawah dan tengah */
+    padding: 30px;          /* Memberikan jarak dalam agar konten tidak menempel pinggir */
+    background: #ffffff;
+    border-radius: 0;       /* Menghilangkan sudut melengkung agar pas dengan layar */
+    box-shadow: none;       /* Menghilangkan bayangan kotak */
+    box-sizing: border-box; /* Memastikan padding tidak membuat elemen melebihi layar */
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Form Pencarian */
+.search-form {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-cari {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cari:hover {
+    background-color: #2980b9;
+}
+
+.btn-reset {
+    padding: 10px 15px;
+    background-color: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: normal;
+    font-size: 14px;
+}
+
+.btn-reset:hover {
+    background-color: #7f8c8d;
+}
+
+/* Tabel Data */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 14px;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.admin-table th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.empty-row {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px;
+}
+
+/* Pembungkus untuk tombol bawah (Logout & Back) */
+.action-footer {
+    display: flex;
+    justify-content: space-between; /* Membuat elemen kiri dan kanan terdorong ke ujung */
+    align-items: center;
+    margin-top: 25px;
+}
+
+/* Tombol Logout di Kiri */
+.logout-link {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Back ke Kanan */
+.back-link {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline; /* Mengubah hover dari overline jadi underline yang lebih umum */
+}
