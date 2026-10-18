@@ -37,7 +37,6 @@ if (isset($_GET['cari'])) {
     <div class="admin-container">
         <h2>Panel Admin - Seluruh Data Pendaftar</h2>
         <p>Login sebagai Administrator: <b><?php echo htmlspecialchars($_SESSION['username']); ?></b></p>
-        
         <!-- Form Pencarian -->
         <form action="lihat_data_admin.php" method="GET" class="search-form">
             <input type="text" name="cari" value="<?php echo htmlspecialchars($cari); ?>" placeholder="Cari berdasarkan nama atau username..." class="search-input">
@@ -58,6 +57,8 @@ if (isset($_GET['cari'])) {
                 <th>No HP</th>
                 <th>Alamat</th>
                 <th>Gender</th>
+        </tr>
+        
             </tr>
             <?php 
             $no = 1;

@@ -43,8 +43,9 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
 
     <nav>
         <a href="dashboard_admin.php">Dashboard</a>
-        <a href="lihat_data_admin.php">Data Pendaftar</a>
-        <a href="lihat_user.php">Daftar Akun User</a>
+        <a href="search_data_user.php">Search Data Pendaftar</a>
+        <a href="lihat_akun_user.php">Daftar Akun User</a>
+        <a href="edit_data_user.php">Edit data</a>
         <a href="../logout.php">Logout</a>
     </nav>
 
@@ -53,7 +54,7 @@ $total_perempuan = mysqli_fetch_assoc($query_perempuan)['total'];
         <div class="card">
             <h3>Total Pendaftar</h3>
             <p class="card-number"><?php echo $total_pendaftar; ?></p>
-            <a href="lihat_data.php" class="card-link">Lihat Detail &rarr;</a>
+            <a href="lihat_data_user.php" class="card-link">Lihat Detail &rarr;</a>
         </div>
 
         <div class="card">

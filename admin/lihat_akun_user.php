@@ -32,9 +32,10 @@ $nama_pengguna = $_SESSION['username'];
 
     <!-- Menu Navigasi Admin -->
     <nav>
-        <a href="dashboard_admin.php">Dashboard</a>
-        <a href="lihat_data_admin.php">Data Pendaftar</a>
-        <a href="lihat_user.php">Daftar Akun User</a>
+      <a href="dashboard_admin.php">Dashboard</a>
+        <a href="search_data_user.php">Search Data Pendaftar</a>
+        <a href="lihat_akun_user.php">Daftar Akun User</a>
+        <a href="edit_data_user.php">Edit data</a>
         <a href="../logout.php">Logout</a>
     </nav>
 

@@ -32,8 +32,8 @@ if (!isset($_SESSION['username'])) {
     <!-- Navigasi Admin -->
  <!-- Navigasi Admin yang sudah diberi gaya -->
  <nav>
-    <a href="lihat_data.php">Data Pendaftar</a>
-    <a href="../user/dashboard.php">Back to dashboard</a>
+    <a href="lihat_data_user.php">Data Pendaftar</a>
+    <a href="dashboard_user.php">Back to dashboard</a>
     <!-- <a href="../logout.php">Logout</a> -->
 </nav>
 
@@ -47,9 +47,9 @@ if (!isset($_SESSION['username'])) {
             <th>Alamat</th>
             <th>Gender</th>
             
-            <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
+            <!-- <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
                 <th>Aksi</th>
-            <?php } ?>
+            <?php } ?> -->
         </tr>
 
         <?php
