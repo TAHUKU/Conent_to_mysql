@@ -16,14 +16,14 @@ if ($result) {
     // Tampilkan pop-up notifikasi berhasil, lalu redirect ke halaman lihat_data.php
     echo "<script>
             alert('Data berhasil dihapus!');
-            window.location='../admin/lihat_data.php';
+            window.location='../user/lihat_data_user.php';
           </script>";
     exit;
 } else {
     // Jika gagal
     echo "<script>
             alert('Gagal menghapus data: " . mysqli_error($koneksi) . "');
-            window.location='../admin/lihat_data.php';
+            window.location='../user/lihat_data_user.php';
           </script>";
 }
 ?>

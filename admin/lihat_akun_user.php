@@ -61,7 +61,7 @@ $nama_pengguna = $_SESSION['username'];
                 <td><?php echo htmlspecialchars($row['role']); ?></td>
                 <td>
                     <!-- Tombol Hapus User -->
-                    <a href="../proces/hapus_user.php?id=<?php echo $row['id']; ?>" 
+                    <a href="../proces/hapus_akun.php?id=<?php echo $row['id']; ?>" 
                        class="btn-hapus" 
                        onclick="return confirm('Yakin ingin menghapus akun user ini?')">Hapus</a>
                 </td>
