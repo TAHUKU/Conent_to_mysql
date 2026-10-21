@@ -66,6 +66,7 @@ if (!empty($cari)) {
         <a href="search_data_user.php">Search Data Pendaftar</a>
         <a href="lihat_akun_user.php">Daftar Akun User</a>
         <a href="edit_data_user.php">Edit data</a>
+        <a href="riwayat_login_user.php">Lihat riwyat login</a>
         <a href="../logout.php">Logout</a>
     </nav>
 

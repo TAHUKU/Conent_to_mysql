@@ -1,6 +1,8 @@
 <?php
 include "../config/teskoneksi.php";
 session_start();
+// $id_user = $row['id']; // ID dari tabel users
+// mysqli_query($koneksi, "INSERT INTO riwayat_login (user_id, waktu_login) VALUES ('$id_user', NOW())");
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -20,6 +22,9 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['role']     = $row['role']; // Menyimpan status 'admin' atau 'user'
 
+            $id_user =$row['id'];
+            mysqli_query($koneksi, "UPDATE users SET riwayat_login = NOW() WHERE id = '$id_user'");
+
             // 3. CABANG / PENGKONDISIAN BERDASARKAN ROLE
             if ($row['role'] == 'admin') {
                 // Jika yang login adalah admin, arahkan ke lihat data
@@ -27,7 +32,7 @@ if (isset($_POST['login'])) {
                 exit;
             } else {
                 // Jika yang login adalah user biasa, arahkan ke halaman form
-                header("Location: ../user/dashboard.php"); // Ganti 'form.php' dengan nama file form Anda
+                header("Location: ../user/dashboard_user.php"); // Ganti 'form.php' dengan nama file form Anda
                 exit;
             }
 

@@ -33,9 +33,9 @@ $nama_pengguna = $_SESSION['username'];
     <!-- Menu Navigasi Admin -->
     <nav>
       <a href="dashboard_admin.php">Dashboard</a>
-        <a href="search_data_user.php">Search Data Pendaftar</a>
+        <a href="search_data_user.php">Search Data Pendaftar</a>    
         <a href="lihat_akun_user.php">Daftar Akun User</a>
-        <a href="edit_data_user.php">Edit data</a>
+        <a href="edit_data_user.php">Edit data user</a>
         <a href="../logout.php">Logout</a>
     </nav>
 
@@ -64,6 +64,7 @@ $nama_pengguna = $_SESSION['username'];
                     <a href="../proces/hapus_akun.php?id=<?php echo $row['id']; ?>" 
                        class="btn-hapus" 
                        onclick="return confirm('Yakin ingin menghapus akun user ini?')">Hapus</a>
+                       <a href="riwayat_login_user.php?id=<?php echo $row['id']; ?>" class="btn-history">Riwayat Login</a>
                 </td>
             </tr>
             <?php } ?>
