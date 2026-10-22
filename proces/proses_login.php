@@ -1,8 +1,6 @@
 <?php
 include "../config/teskoneksi.php";
 session_start();
-// $id_user = $row['id']; // ID dari tabel users
-// mysqli_query($koneksi, "INSERT INTO riwayat_login (user_id, waktu_login) VALUES ('$id_user', NOW())");
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -15,34 +13,83 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
 
-        // 2. Cocokkan password yang di-input dengan password terenkripsi di database
+        // 2. Cocokkan password
         if (password_verify($password, $row['password'])) {
             
-            // Simpan data penting ke dalam Session
             $_SESSION['username'] = $row['username'];
-            $_SESSION['role']     = $row['role']; // Menyimpan status 'admin' atau 'user'
+            $_SESSION['role']     = $row['role']; 
 
-            $id_user =$row['id'];
+            $id_user = $row['id'];
             mysqli_query($koneksi, "UPDATE users SET riwayat_login = NOW() WHERE id = '$id_user'");
 
-            // 3. CABANG / PENGKONDISIAN BERDASARKAN ROLE
+            // Berhasil Login (Opsional: Bisa pakai SweetAlert sukses juga, atau langsung redirect)
             if ($row['role'] == 'admin') {
-                // Jika yang login adalah admin, arahkan ke lihat data
-                header("Location: ../admin/dashboard_admin.php");
+                echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+                echo "<body style='font-family: Inter, sans-serif;'></body>";
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            title: 'Login Berhasil!',
+                            text: 'Selamat datang, Admin.',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location = '../admin/dashboard_admin.php';
+                        });
+                    });
+                </script>";
                 exit;
             } else {
-                // Jika yang login adalah user biasa, arahkan ke halaman form
-                header("Location: ../user/dashboard_user.php"); // Ganti 'form.php' dengan nama file form Anda
+                echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+                echo "<body style='font-family: Inter, sans-serif;'></body>";
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            title: 'Login Berhasil!',
+                            text: 'Selamat datang.',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location = '../user/dashboard_user.php';
+                        });
+                    });
+                </script>";
                 exit;
             }
 
         } else {
-            // Password salah
-            echo "<script>alert('Password salah!'); window.location='login.php';</script>";
+            // Password Salah - Popup di Tengah
+            echo "<html><head><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script><link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' rel='stylesheet'></head><body style='font-family: Inter, sans-serif;'>";
+            echo "<script>
+                Swal.fire({
+                    title: 'Gagal!',
+                    text: 'Password salah!',
+                    icon: 'error',
+                    confirmButtonText: 'Coba Lagi',
+                    confirmButtonColor: '#3b82f6'
+                }).then(() => {
+                    window.location = '../login.php';
+                });
+            </script>";
+            echo "</body></html>";
         }
     } else {
-        // Username tidak ditemukan
-        echo "<script>alert('Username tidak ditemukan!'); window.location='login.php';</script>";
+        // Username Tidak Ditemukan - Popup di Tengah
+        echo "<html><head><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script><link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' rel='stylesheet'></head><body style='font-family: Inter, sans-serif;'>";
+        echo "<script>
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Username tidak ditemukan!',
+                icon: 'error',
+                confirmButtonText: 'Coba Lagi',
+                confirmButtonColor: '#3b82f6'
+            }).then(() => {
+                window.location = '../login.php';
+            });
+        </script>";
+        echo "</body></html>";
     }
 }
 ?>

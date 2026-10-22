@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Panggil CSS Eksternal -->
     <link rel="stylesheet" href="css/form.css">
+    <link rel="shortcut icon" href="favicon/login.png" type="image/x-icon">
 </head>
 <body>
 
@@ -25,7 +26,7 @@ session_start();
     </div>
 
     <!-- Form Login -->
-    <form action="cek_login.php" method="POST">
+    <form action="proces/proses_login.php" method="POST">
         
         <!-- Input Username -->
         <div class="form-group">
@@ -50,7 +51,7 @@ session_start();
         </div>
 
         <!-- Tombol Submit -->
-        <button type="submit" class="btn-login">Masuk Sekarang</button>
+    <button type="submit" name="login" class="btn-login">Masuk Sekarang</button>
 
     </form>
 
