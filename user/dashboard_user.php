@@ -1,5 +1,16 @@
 <?php
 session_start();
+$batas_waktu = 1800; 
+
+if (isset($_SESSION['terakhir_aktivitas'])) {
+    if ((time() - $_SESSION['terakhir_aktivitas']) > $batas_waktu) {
+        session_unset();
+        session_destroy();
+        header("Location: ../login.php?pesan=timeout");
+        exit;
+    }
+}
+$_SESSION['terakhir_aktivitas'] = time();
 // Pastikan hanya user biasa yang bisa akses
 if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
     echo "<script>alert('Akses ditolak!'); window.location='../login.php';</script>";
@@ -73,6 +84,8 @@ $sudah_daftar = mysqli_num_rows($cek_pendaftar) > 0;
 
     <!-- Panggil file JS untuk sapaan dinamis waktu -->
     <script src="../js/time.js"></script>
+    <script src="../js/auto_logout.js"></script>
+
 
 </body>
 </html>
