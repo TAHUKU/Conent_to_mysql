@@ -1,78 +1,134 @@
-/* Gaya Khusus Halaman Login & Register (Form Container) */
+/* css/log_reg.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-container {
-    max-width: 400px;
-    margin: 60px auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .form-container h2 {
-    text-align: center;
-    color: #2c3e50;
+    color: #1e293b;
+    font-size: 26px;
+    font-weight: 700;
     margin-bottom: 25px;
+    text-align: center;
 }
 
-/* Label & Input Form */
-.form-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #34495e;
-    font-size: 14px;
-}
-
-.form-container input[type="text"],
-.form-container input[type="password"] {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccd1d1;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 14px;
-    transition: border-color 0.2s;
+.form-group {
     margin-bottom: 20px;
 }
 
-.form-container input:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Tombol Submit (Login / Daftar) */
-.form-container button {
-    width: 100%;
-    background-color: #3498db;
-    color: white;
-    padding: 11px;
-    border: none;
-    border-radius: 6px;
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i.icon-left {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
     font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.form-container button:hover {
-    background-color: #2980b9;
-}
-
-/* Teks Link di Bawah Form */
-.form-container p {
-    text-align: center;
-    margin-top: 20px;
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
     font-size: 14px;
-    color: #7f8c8d;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease;
 }
 
-.form-container p a {
-    color: #3498db;
+.input-wrapper input.password-input {
+    padding-right: 45px;
+}
+
+.input-wrapper input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #475569;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background: #2563eb;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+p a {
+    color: #3b82f6;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-.form-container p a:hover {
+p a:hover {
     text-decoration: underline;
 }
