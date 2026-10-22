@@ -50,13 +50,12 @@ if (!empty($cari)) {
     </nav>
 
     <!-- Form Pencarian -->
-    <div class="search-box">
+<div class="search-box">
         <form action="" method="GET">
             <input type="text" name="cari" placeholder="Cari username..." value="<?php echo htmlspecialchars($cari); ?>">
             <button type="submit">Cari</button>
-            <?php if (!empty($cari)): ?>
-                <a href="riwayat_login_user.php" class="btn-reset">Reset</a>
-            <?php endif; ?>
+            <!-- Tombol Reset Selalu Muncul -->
+            <a href="riwayat_login_user.php" class="btn-reset-btn">Reset</a>
         </form>
     </div>
 
