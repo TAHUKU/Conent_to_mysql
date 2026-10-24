@@ -1,0 +1,7 @@
+nama_lengkap (VARCHAR)
+
+email (VARCHAR)
+
+telepon atau no_hp (VARCHAR)
+
+gender atau jenis_kelamin (ENUM / VARCHAR)

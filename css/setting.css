@@ -1,0 +1,119 @@
+/* --- Styling Halaman Settings & Icon Password --- */
+.settings-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative; /* Wajib ada agar posisi ikon bisa absolute di dalam group ini */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; /* Menyediakan ruang di sebelah kanan agar teks tidak menimpa ikon mata */
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-group input:disabled {
+    background: #f1f5f9;
+}
+
+/* Posisi Ikon Mata (Hide & Show) */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px; /* Menyesuaikan tinggi agar sejajar pas di tengah input */
+    cursor: pointer;
+    color: #64748b;
+}
+
+.toggle-password:hover {
+    color: #334155;
+}
+
+.btn-submit {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* .btn-back {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: end;
+} */
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.alert-success { 
+    background-color: #d1fae5; 
+    color: #065f46; 
+}
+
+.alert-danger { 
+    background-color: #fee2e2; 
+    color: #991b1b; 
+}
+
+/* --- Styling Tombol Aksi & Link Kembali --- */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara tombol dan link */
+    margin-top: 20px;
+}
+
+.back-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1e293b;
+    text-decoration: underline;
+}
