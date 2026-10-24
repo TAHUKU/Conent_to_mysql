@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     if ($result) {
         // Jika yang login user biasa, arahkan kembali ke dashboard user
         if (isset($_SESSION['role']) && $_SESSION['role'] == 'user') {
-            echo "<script>alert('Pendaftaran berhasil!'); window.location='../user/dashboard.php';</script>";
+            echo "<script>alert('Pendaftaran berhasil!'); window.location='../user/dashboard_user.php';</script>";
         } else {
             // Jika admin yang menginputkan
             echo "<script>alert('Pendaftaran berhasil!'); window.location='../admin/lihat_data.php';</script>";

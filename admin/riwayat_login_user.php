@@ -2,10 +2,10 @@
 session_start();
 include "../config/teskoneksi.php";
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
-    header("Location: ../login.php");
-    exit;
-}
+// if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
+//     header("Location: ../login.php");
+//     exit;
+// }
 
 $nama_pengguna = $_SESSION['username'] ?? 'Admin';
 $cari = isset($_GET['cari']) ? $_GET['cari'] : '';
@@ -36,7 +36,7 @@ if (!empty($cari)) {
 
     <!-- Kotak Info Sapaan & Logout -->
     <div class="user-info-box">
-        <h3>Selamat Siang, <?php echo htmlspecialchars($nama_pengguna); ?></h3>
+       <h3 id="teks-sapaan" data-nama="<?php echo htmlspecialchars($nama_pengguna ?? ''); ?>"></h3>
         <a href="../logout.php" class="btn-logout-box">Logout</a>
     </div>
 
@@ -101,6 +101,8 @@ if (!empty($cari)) {
         </table>
     </div>
 </div>
+
+<script src="../js/time.js"></script>
 
 </body>
 </html>

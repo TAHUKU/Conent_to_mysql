@@ -1,10 +1,5 @@
 <?php
 session_start();
-// Pastikan hanya admin yang bisa akses
-if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
-    echo "<script>alert('Akses ditolak!'); window.location='../login.php';</script>";
-    exit;
-}
 
 // Panggil koneksi database
 include "../config/teskoneksi.php"; 

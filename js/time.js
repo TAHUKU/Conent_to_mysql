@@ -1,24 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Ambil jam saat ini dari perangkat user (0 - 23)
-    const jam = new Date().getHours();
-    let sapaan = "";
+/**
+ * time.js
+ * Menampilkan sapaan dinamis berdasarkan waktu (pagi/siang/sore/malam)
+ * dan nama pengguna dari atribut data-nama.
+ */
+(function () {
+    "use strict";
 
-    // Tentukan sapaan berdasarkan jam
-    if (jam >= 3 && jam < 11) {
-        sapaan = "Selamat Pagi";
-    } else if (jam >= 11 && jam < 15) {
-        sapaan = "Selamat Siang";
-    } else if (jam >= 15 && jam < 18) {
-        sapaan = "Selamat Sore";
-    } else {
-        sapaan = "Selamat Malam";
+    function getSapaan() {
+        const jam = new Date().getHours();
+
+        if (jam >= 4 && jam < 11)  return { teks: "Selamat Pagi",   emoji: "🌤️" };
+        if (jam >= 11 && jam < 15) return { teks: "Selamat Siang",  emoji: "☀️" };
+        if (jam >= 15 && jam < 18) return { teks: "Selamat Sore",   emoji: "🌇" };
+        return { teks: "Selamat Malam", emoji: "🌙" };
     }
 
-    // Cari elemen HTML yang punya id "teks-sapaan" lalu masukkan teksnya
-    const elemenSapaan = document.getElementById("teks-sapaan");
-    if (elemenSapaan) {
-        // Ambil nama dari atribut data-nama yang kita simpan dari PHP
-        const namaUser = elemenSapaan.getAttribute("data-nama");
-        elemenSapaan.innerText = `${sapaan}, ${namaUser}`;
-    }
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        const el = document.getElementById("teks-sapaan");
+        if (!el) return;
+
+        const nama = el.dataset.nama || "Pengguna";
+        const { teks, emoji } = getSapaan();
+
+        el.textContent = `${emoji} ${teks}, ${nama}!`;
+
+        // Animasi fade-in halus
+        el.style.opacity = "0";
+        el.style.transition = "opacity .6s ease";
+        requestAnimationFrame(() => { el.style.opacity = "1"; });
+    });
+})();

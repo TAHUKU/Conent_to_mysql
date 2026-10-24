@@ -1,23 +1,38 @@
-// js/auto_logout.js
+/**
+ * auto_logout.js
+ * Logout otomatis setelah periode tidak aktif (default 15 menit).
+ */
+(function () {
+    "use strict";
 
-// Waktu timeout dalam milidetik (30 menit = 30 * 60 * 1000 = 1,800,000 ms)
-const timeoutLimit = 30 * 60 * 1000; 
-let logoutTimer;
+    const BATAS_WAKTU_MENIT = 15;          // ubah sesuai kebutuhan
+    const BATAS_MS = BATAS_WAKTU_MENIT * 60 * 1000;
+    const HALAMAN_LOGOUT = "../logout.php";
 
-function doLogout() {
-    alert("Sesi Anda telah habis karena tidak ada aktivitas selama 30 menit.");
-    // Mengarahkan ke file logout, sesuaikan jalur file jika diperlukan
-    window.location.href = "../logout.php"; 
-}
+    let timer = null;
 
-function resetTimer() {
-    clearTimeout(logoutTimer);
-    logoutTimer = setTimeout(doLogout, timeoutLimit);
-}
+    function logout() {
+        window.location.href = HALAMAN_LOGOUT;
+    }
 
-// Daftarkan event listener untuk memantau aktivitas user
-window.onload = resetTimer;
-window.onmousemove = resetTimer;
-window.onkeypress = resetTimer;
-window.onclick = resetTimer;
-window.onscroll = resetTimer;
+    function resetTimer() {
+        clearTimeout(timer);
+        timer = setTimeout(logout, BATAS_MS);
+    }
+
+    function init() {
+        // Pantau aktivitas pengguna
+        ["mousemove", "keydown", "scroll", "click", "touchstart"].forEach(function (evt) {
+            document.addEventListener(evt, resetTimer, { passive: true });
+        });
+
+        resetTimer();
+
+        // Opsional: peringatan 1 menit sebelum logout
+        setInterval(function () {
+            // logika peringatan bisa ditambahkan di sini
+        }, 60 * 1000);
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+})();

@@ -47,7 +47,7 @@ $sudah_daftar = mysqli_num_rows($cek_pendaftar) > 0;
 
     <!-- Menu Navigasi User -->
     <nav>
-        <a href="dashboard.php">Dashboard</a>
+        <a href="dashboard_user.php">Dashboard</a>
         <a href="../form_pendaftaran.php">Form Pendaftaran</a>
         <!-- <a href="../logout.php">Logout</a> -->
     </nav>

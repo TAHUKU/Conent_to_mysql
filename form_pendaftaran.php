@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Pendaftaran</title>
-    <link rel="stylesheet" href="css/form.css">
     <link rel="shortcut icon" href="../favicon/form_pendaftaran.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/pendaf.css">
 </head>
 <body>
     <h2>Form Pendaftaran Siswa/Peserta</h2>
@@ -31,6 +31,6 @@
     <button type="submit" name="submit">Daftar Sekarang</button>
     </form>
     <br>
-    <a href="admin/lihat_data.php">Lihat Data Pendaftar</a>
+    <a href="user/lihat_data_user.php">Lihat Data Pendaftar</a>
 </body>
 </html>
