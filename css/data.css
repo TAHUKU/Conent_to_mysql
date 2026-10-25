@@ -1,397 +1,499 @@
-/* ===============================================
-   1. REGISTRASI FONT & BASE STYLE
-   =============================================== */
+/* --- RESET & LAYOUT DASAR V2 --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-body {
-    background-color: #f4f6f9;
-    color: #333;
-    padding: 30px;
-    line-height: 1.6;
+body.dashboard-body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
 }
 
-/* ===============================================
-   2. JUDUL & INFO LOGIN (USER INFO)
-   =============================================== */
-h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.user-info {
+/* --- TOPBAR V2 --- */
+.topbar-v2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.user-info h2 {
-    font-size: 1.2rem;
-    color: #34495e;
-    margin-bottom: 0;
-}
-
-/* ===============================================
-   3. NAVIGASI BAR (NAV)
-   =============================================== */
-nav {
-    background-color: #2c3e50;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
+.topbar-brand {
     display: flex;
-    gap: 15px;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #34495e;
-    color: #3498db;
-}
-
-/* ===============================================
-   4. TABEL DATA (DATA-TABLE)
-   =============================================== */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.data-table th {
-    background-color: #34495e;
-    color: #ffffff;
-    text-align: left;
-    padding: 14px 18px;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.data-table td {
-    padding: 12px 18px;
-    border-bottom: 1px solid #eef2f5;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.data-table tr:nth-child(even) {
-    background-color: #f9fbfd;
-}
-
-.data-table tr:hover {
-    background-color: #f1f5f9;
-}
-
-/* ===============================================
-   5. TOMBOL (BUTTONS)
-   =============================================== */
-.btn-logout {
-    background-color: #e74c3c;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.btn-logout:hover {
-    background-color: #c0392b;
-}
-
-.btn-edit {
-    background-color: #f39c12;
-    color: white;
-    padding: 6px 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    margin-right: 5px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.btn-edit:hover {
-    background-color: #d35400;
-}
-
-.btn-hapus {
-    background-color: #e74c3c;
-    color: white;
-    padding: 6px 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.btn-hapus:hover {
-    background-color: #c0392b;
-}
-
-.btn-history{
-    background-color: #e74c3c;
-    color: white;
-    padding: 6px 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.btn-history:hover{
-    background-color: #27ae60;
-}
-
-
-/* ===============================================
-   6. DASHBOARD CARDS STYLING
-   =============================================== */
-.dashboard-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #3498db;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-    font-size: 0.95rem;
-    color: #7f8c8d;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card .card-number {
-    font-size: 2.2rem;
+    gap: 10px;
     font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: #0f172a;
 }
 
-.card .card-link {
-    display: inline-block;
-    font-size: 0.85rem;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 600;
+.topbar-brand i {
+    color: #3b82f6;
+    font-size: 20px;
 }
 
-.card .card-link:hover {
-    text-decoration: underline;
-}
-
-/* Warna Beda untuk Kartu Info Tambahan */
-.card-info {
-    border-left-color: #2ecc71;
-}
-/* ===============================================
-   7. CHART CONTAINER STYLING
-   =============================================== */
-.chart-container {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-top: 30px;
-    max-width: 100%;
-}
-
-.chart-container h3 {
-    font-size: 1.1rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-/* Styling khusus untuk tombol / link lihat data di dashboard */
-.btn-lihat {
-    display: inline-block;
-    background-color: #2ecc71; /* Warna hijau segar */
-    color: white;
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 15px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.btn-lihat:hover {
-    background-color: #27ae60;
-    transform: translateY(-1px);
-}
-
-/* Styling Tombol Pagination */
-.pagination {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    align-items: center;
-}
-
-.btn-page {
-    padding: 8px 14px;
-    background-color: #ffffff;
-    color: #2c3e50;
-    border: 1px solid #cbd5e1;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.btn-page:hover {
-    background-color: #f1f5f9;
-    border-color: #94a3b8;
-    color: #1e293b;
-}
-
-.btn-page.active {
-    background-color: #3498db;
-    color: white;
-    border-color: #3498db;
-    font-weight: 600;
-}
-
-.btn-page.active:hover {
-    background-color: #2980b9;
-}
-
-/* Styling Navbar & Notifikasi */
-.navbar-right {
+.topbar-right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.notification-wrapper {
+.user-greeting {
+    font-size: 14px;
+    color: #475569;
+}
+
+/* Avatar & Dropdown Menu */
+.profile-dropdown-container {
     position: relative;
 }
 
-.notification-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 18px;
-    cursor: pointer;
-    position: relative;
-    padding: 5px;
-}
-
-.notification-badge {
-    position: absolute;
-    top: -2px;
-    right: -4px;
-    background-color: #ef4444;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 2px 5px;
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    background: #e2e8f0;
+    color: #334155;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #cbd5e1;
 }
 
-.notification-dropdown {
+.profile-avatar:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+.dropdown-menu-v2 {
     display: none;
     position: absolute;
     right: 0;
-    top: 40px;
-    width: 320px;
+    top: 50px;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    z-index: 1000;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
     overflow: hidden;
+    z-index: 1001;
+}
+
+.dropdown-menu-v2 a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #334155;
+    font-size: 14px;
+    transition: background 0.15s;
+}
+
+.dropdown-menu-v2 a:hover {
+    background: #f1f5f9;
+}
+
+.dropdown-menu-v2 a.logout-link {
+    color: #ef4444;
+}
+
+.dropdown-menu-v2 a.logout-link:hover {
+    background: #fee2e2;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #e2e8f0;
+}
+
+/* --- MAIN CONTAINER & NAV TABS --- */
+.main-container-v2 {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.nav-tabs-v2 {
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+
+.nav-tab-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-tab-item:hover {
+    background: #f1f5f9;
     color: #1e293b;
 }
 
-.notification-dropdown.active {
-    display: block;
+.nav-tab-item.active {
+    background: #3b82f6;
+    color: #ffffff;
 }
 
-.notification-header {
-    padding: 12px 16px;
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
-    font-weight: 600;
+/* --- HERO BANNER --- */
+.hero-banner {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.hero-text p {
+    color: #94a3b8;
     font-size: 14px;
 }
 
-.notification-body {
-    max-height: 280px;
-    overflow-y: auto;
-}
-
-.notification-item {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f1f5f9;
+.hero-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
     font-size: 13px;
-    transition: background 0.2s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.notification-item:hover {
-    background: #f8fafc;
+.hero-badge i {
+    color: #10b981;
 }
 
-.notification-item .username {
-    font-weight: 600;
+/* --- DASHBOARD GRID & CARDS V2 --- */
+.dashboard-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.card-v2 {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-v2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-v2 {
+    padding: 20px 20px 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.card-icon.blue {
+    background: #eff6ff;
     color: #3b82f6;
 }
 
-.notification-item .time {
-    font-size: 11px;
-    color: #94a3b8;
-    margin-top: 3px;
+.card-icon.green {
+    background: #ecfdf5;
+    color: #10b981;
 }
 
-.notification-empty {
+.card-header-v2 h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+/* Badge Status Kecil */
+.badge-status {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.badge-status.active {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge-status.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.card-body-v2 {
     padding: 20px;
-    text-align: center;
-    color: #94a3b8;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.info-list {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    background: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 6px;
     font-size: 13px;
+}
+
+.text-muted {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.card-footer-v2 {
+    padding: 15px 20px;
+    background: #fafafa;
+    border-top: 1px solid #f1f5f9;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Tombol Kustom v2 */
+.btn-v2 {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    display: inline-block;
+}
+
+.btn-v2.btn-primary {
+    background: #3b82f6;
+    color: #ffffff;
+    flex: 1;
+}
+
+.btn-v2.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-v2.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+    flex: 1;
+}
+
+.btn-v2.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.btn-v2.btn-outline {
+    background: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    width: 100%;
+}
+
+.btn-v2.btn-outline:hover {
+    background: #eff6ff;
+}
+
+/* --- RESPONSIF UNTUK TABLET & HP (Max 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Topbar menyesuaikan jadi vertikal / lebih ringkas */
+    .topbar-v2 {
+        padding: 12px 15px;
+    }
+
+    .user-greeting {
+        display: none; /* Sembunyikan sapaan teks panjang di layar HP agar tidak sempit */
+    }
+
+    /* Penyesuaian Main Container */
+    .main-container-v2 {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    /* Navigasi Tabs bisa digeser ke samping (horizontal scroll) jika tidak muat */
+    .nav-tabs-v2 {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 6px;
+        gap: 5px;
+    }
+
+    .nav-tab-item {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    /* Hero Banner menyesuaikan orientasi vertikal */
+    .hero-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hero-badge {
+        align-self: flex-start;
+    }
+
+    /* Grid Kartu berubah menjadi 1 kolom penuh ke bawah */
+    .dashboard-grid-v2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Tombol aksi di footer kartu tersusun vertikal jika terlalu sempit */
+    .action-group {
+        flex-direction: column;
+    }
+}
+
+/* --- RESPONSIF UNTUK LAYAR SANGAT KECIL / HP KECIL (Max 480px) --- */
+@media screen and (max-width: 480px) {
+    .topbar-brand span {
+        display: none; /* Sembunyikan teks brand, sisakan ikonnya saja */
+    }
+
+    .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .card-header-v2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* --- TABEL MODERN V2 --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table-v2 {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+    color: #334155;
+}
+
+.data-table-v2 th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table-v2 td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.data-table-v2 tbody tr:hover {
+    background: #f8fafc;
+}
+
+.badge-gender {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-danger-soft {
+    background: #fee2e2;
+    color: #991b1b;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger-soft:hover {
+    background: #fecaca;
 }
