@@ -46,7 +46,7 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
                 </div>
                 <!-- Menu Dropdown -->
                 <div class="dropdown-menu-v2" id="dropdownMenu">
-                    <a href="settings.php"><i class="fa-solid fa-gear"></i> Pengaturan Akun</a>
+                    <a href="setting.php"><i class="fa-solid fa-gear"></i> Pengaturan Akun</a>
                     <div class="dropdown-divider"></div>
                     <a href="../logout.php" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
                 </div>
@@ -130,9 +130,10 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
 
         </div>
     </main>
+    <script src="../js/dash_user.js"></script>
 
     <!-- SCRIPT INTERAKSI SEDERHANA (Dropdown Profil) -->
-    <script>
+    <!-- <script>
         function toggleDropdown() {
             const menu = document.getElementById('dropdownMenu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
@@ -147,6 +148,6 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
                 }
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>
