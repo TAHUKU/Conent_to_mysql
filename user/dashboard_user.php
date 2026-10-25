@@ -9,9 +9,17 @@ if (!isset($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username'];
-$query = mysqli_query($koneksi, "SELECT * FROM users WHERE username = '$username'");
-$user = mysqli_fetch_assoc($query);
+
+// 1. Ambil data akun untuk sapaan / profil (dari tabel users)
+$query_user = mysqli_query($koneksi, "SELECT * FROM users WHERE username = '$username'");
+$user = mysqli_fetch_assoc($query_user);
 $nama_pengguna = $user['nama_lengkap'] ?? $username;
+
+// 2. CEK APAKAH USER INI SUDAH MENDAFTAR ATAU BELUM (di tabel pendaftaran, misal: tabel 'tes')
+// Sesuaikan nama kolom 'user' atau 'username' di bawah ini dengan kolom yang menyimpan nama user/username di tabel 'tes' Anda
+$query_pendaftaran = mysqli_query($koneksi, "SELECT * FROM tes WHERE user = '$username'");
+$sudah_mendaftar = mysqli_num_rows($query_pendaftaran) > 0;
+$data_pendaftaran = mysqli_fetch_assoc($query_pendaftaran); // Ambil datanya jika ada
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +32,7 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
     <link rel="stylesheet" href="../css/data.css">
     <!-- FontAwesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../favicon/user.png" type="image/x-icon">
 </head>
 <body class="dashboard-body">
 
@@ -46,10 +55,16 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
                 </div>
                 <!-- Menu Dropdown -->
                 <div class="dropdown-menu-v2" id="dropdownMenu">
-                    <a href="setting.php"><i class="fa-solid fa-gear"></i> Pengaturan Akun</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="../logout.php" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-                </div>
+    <!-- Menu Baru: Menuju halaman profil lengkap -->
+                <a href="profil.php"><i class="fa-solid fa-id-card"></i> Profil Saya</a>
+                
+                <!-- Menu Pengaturan / Ubah Password -->
+                <a href="settings.php"><i class="fa-solid fa-gear"></i> Pengaturan Sandi</a>
+                
+                <div class="dropdown-divider"></div>
+                
+                <a href="../logout.php" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
             </div>
         </div>
     </header>
@@ -108,23 +123,38 @@ $nama_pengguna = $user['nama_lengkap'] ?? $username;
             </div>
 
             <!-- Card 2: Status Pendaftaran -->
+            <!-- Card 2: Status Pendaftaran -->
             <div class="card-v2">
                 <div class="card-header-v2">
-                    <div class="card-icon green">
+                    <div class="card-icon <?php echo $sudah_mendaftar ? 'green' : 'blue'; ?>">
                         <i class="fa-solid fa-clipboard-check"></i>
                     </div>
                     <div>
                         <h3>Status Pendaftaran</h3>
-                        <span class="badge-status success">Sudah Mendaftar</span>
+                        <?php if ($sudah_mendaftar): ?>
+                            <span class="badge-status success">Sudah Mendaftar</span>
+                        <?php else: ?>
+                            <span class="badge-status" style="background: #fef3c7; color: #d97706;">Belum Mendaftar</span>
+                        <?php endif; ?>
                     </div>
                 </div>
+                
                 <div class="card-body-v2">
-                    <p>Data diri Anda telah tersimpan dengan aman di dalam sistem basis data kami.</p>
-                    <p class="text-muted">Silakan periksa kembali detail data atau lakukan perubahan jika ada informasi yang perlu diperbarui.</p>
+                    <?php if ($sudah_mendaftar): ?>
+                        <p>Data diri Anda telah tersimpan dengan aman di dalam sistem basis data kami.</p>
+                        <p class="text-muted">Silakan periksa kembali detail data atau lakukan perubahan jika ada informasi yang perlu diperbarui.</p>
+                    <?php else: ?>
+                        <p>Anda belum mengisi formulir pendaftaran data diri. Silakan isi form terlebih dahulu untuk melengkapi data Anda.</p>
+                    <?php endif; ?>
                 </div>
+
                 <div class="card-footer-v2 action-group">
-                    <a href="lihat_data_user.php" class="btn-v2 btn-primary">Lihat Data</a>
-                    <a href="edit_user.php" class="btn-v2 btn-secondary">Edit Data</a>
+                    <?php if ($sudah_mendaftar): ?>
+                        <a href="lihat_data_user.php" class="btn-v2 btn-primary">Lihat Data</a>
+                        <a href="edit.php" class="btn-v2 btn-secondary">Edit Data</a>
+                    <?php else: ?>
+                        <a href="../form_pendaftaran.php" class="btn-v2 btn-primary" style="width: 100%;">Isi Form Pendaftaran</a>
+                    <?php endif; ?>
                 </div>
             </div>
 

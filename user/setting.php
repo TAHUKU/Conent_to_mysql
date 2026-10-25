@@ -23,6 +23,7 @@ $user = mysqli_fetch_assoc($result);
     <title>Pengaturan Akun</title>
     <link rel="stylesheet" href="../css/setting.css"> <!-- Sesuaikan dengan CSS Anda -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../favicon/settings.png" type="image/x-icon">
 </head>
 <body>
 
